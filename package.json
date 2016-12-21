@@ -1,0 +1,36 @@
+{
+  "name": "sigmatch",
+  "version": "0.9.0",
+  "description": "Yet another way to overload functions",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "coffee -o lib/ -c src/*",
+    "test": "mocha spec --recursive --require spec/helpers/chai.js --require coffee-script/register --compilers coffee:coffee-script/register",
+    "test-watch": "mocha --recursive -b -w spec --require spec/helpers/chai.js --require coffee-script/register --compilers coffee:coffee-script/register,litcoffee:coffee-script/register ",
+    "test-debug": "node-debug node_modules/mocha/bin/_mocha  --recursive spec --require spec/helpers/chai.js --require coffee-script/register --compilers coffee:coffee-script/register --no-timeouts --debug-brk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ldegen/sigmatch.git"
+  },
+  "keywords": [
+    "overloading",
+    "pattern matching",
+    "matching",
+    "signature matching"
+  ],
+  "author": "Lukas Degener",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/ldegen/sigmatch/issues"
+  },
+  "homepage": "https://github.com/ldegen/sigmatch#readme",
+  "devDependencies": {
+    "bluebird": "^3.4.6",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "coffee-script": "^1.12.2",
+    "mocha": "^3.2.0",
+    "node-inspector": "^0.12.8"
+  }
+}
